@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Subscribe{% endblock %}
+{% block content %}
+  <h1>Email Subscribe</h1>
+  <p>Nayi post aate hi aap ko email mil jayegi.</p>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Subscribe</button>
+  </form>
+{% endblock %}

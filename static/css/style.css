@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Segoe UI, Arial, sans-serif; background: #f5f6f8; color: #222; line-height: 1.6; }
+a { color: #2b6cb0; text-decoration: none; } a:hover { text-decoration: underline; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+.site-header { background: #1a202c; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; }
+.nav a, .nav .link { color: #fff; margin-left: 16px; }
+.brand { font-weight: 700; font-size: 1.2rem; margin-left: 0 !important; }
+.inline { display: inline; } .link { background: none; border: 0; cursor: pointer; font: inherit; }
+.card { background: #fff; padding: 16px 20px; margin: 16px 0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.card h2 { margin: 0 0 4px; }
+.meta { color: #718096; font-size: .9rem; margin: 0 0 8px; }
+.tag { background: #e2e8f0; padding: 2px 8px; border-radius: 12px; font-size: .85rem; margin-right: 4px; }
+.badge { background: #fefcbf; padding: 2px 8px; border-radius: 6px; font-size: .8rem; }
+.body img { max-width: 100%; height: auto; }
+.msg { padding: 10px 14px; margin: 16px 0; border-radius: 6px; background: #c6f6d5; }
+.msg.error { background: #fed7d7; }
+.form p { margin: 12px 0; } .form label { display: block; font-weight: 600; margin-bottom: 4px; }
+.form input[type=text], .form input[type=email], .form input[type=password], .form input[type=datetime-local], .form textarea, .form select { width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font: inherit; }
+button[type=submit]:not(.link) { background: #2b6cb0; color: #fff; border: 0; padding: 10px 20px; border-radius: 6px; cursor: pointer; font: inherit; }
+.errorlist { color: #c53030; list-style: none; padding: 0; margin: 4px 0; }
+.helptext { color: #718096; font-size: .85rem; }
+.pager { display: flex; justify-content: space-between; margin: 24px 0; }
+.footer { text-align: center; color: #718096; padding: 24px 16px; }

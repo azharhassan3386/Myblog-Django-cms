@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }}{% endblock %}
+{% block content %}
+	<h1>{{ heading }}</h1>
+
+	{% if author_profile %}
+		<div class="card author">
+			{% if author_profile.avatar %}<img src="{{ author_profile.avatar.url }}" alt="" width="80">{% endif %}
+			<p>{{ author_profile.bio|default:"Is author ne abhi bio nahi likhi." }}</p>
+		</div>
+	{% endif %}
+
+	{% for post in posts %}
+		<article class="card">
+			<h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+			<p class="meta">
+				{{ post.display_date|date:"d M Y" }} &middot;
+				<a href="{% url 'author' post.author.username %}">{{ post.author.username }}</a>
+				{% if post.category %}&middot; <a href="{% url 'category' post.category.slug %}">{{ post.category.name }}</a>{% endif %}
+			</p>
+			<p>{{ post.excerpt }}</p>
+			<p>{% for tag in post.tags.all %}<a class="tag" href="{% url 'tag' tag.slug %}">#{{ tag.name }}</a> {% endfor %}</p>
+		</article>
+	{% empty %}
+		<p>Abhi koi post nahi hai.</p>
+	{% endfor %}
+
+	{% if is_paginated %}
+		<div class="pager">
+			{% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>{% endif %}
+			<span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+			{% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}
